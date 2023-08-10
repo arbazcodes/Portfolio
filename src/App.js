@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import StarsCanvas from "./components/canvas/Stars"
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <Home/>
+      <StarsCanvas/>
     </div>
   );
 }

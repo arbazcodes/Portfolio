@@ -29,7 +29,7 @@ const NavBar = () => {
     const [nav, setNav] = useState(false);
 
   return (
-    <div className='flex justify-between w-full h-24 items-center text-white fixed bg-slate-900 px-5'>
+    <div className='flex justify-between w-full h-24 items-center text-white fixed bg-transparent px-5'>
         <img src={logo} alt='logo' className=' h-14 w-15 hover:scale-110 duration-200'/>
         <ul className='hidden md:flex'>
             {links.map(({id, link})=>(<li key={id} className='capitalize  px-7 font-medium text-xl cursor-pointer text-gray-500 hover:scale-125 hover:text-white duration-200'>
