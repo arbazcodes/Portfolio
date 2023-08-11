@@ -10,8 +10,8 @@ import { useInView } from 'react-intersection-observer';
 
 const DomainCard = ({ index, title, icon }) => {
     const [ref, inView] = useInView({
-    triggerOnce: true, // Ensures the animation only triggers once
-    threshold: 0.5, // Adjust this threshold as needed
+    triggerOnce: true,
+    threshold: 0.5,
 });
     return (
         <Tilt className="xs:w-[250px] w-64 items-center">
@@ -40,7 +40,7 @@ const About = () => {
    
     const domain = [
         {
-            title: "AI Eniginner",
+            title: "AI Enigineer",
             icon: ai
         },
         {
@@ -54,7 +54,7 @@ const About = () => {
     ]
     return (
         <>
-        <div className='h-full w-full text-white bg-gradient-to-b from-black to-slate-900 py-28 text-center justify-center items-center'>
+        <div className='h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center'>
         <motion.div initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}

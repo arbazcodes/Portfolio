@@ -21,3 +21,8 @@
   background-size: cover;
   background-position: center;
 }
+
+.right-timeline .vertical-timeline-element-content {
+  margin-left: 0;
+  margin-right: 120px; /* Adjust the value as needed */
+}

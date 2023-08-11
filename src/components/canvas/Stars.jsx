@@ -29,7 +29,7 @@ const Stars = (props) => {
 
 const StarsCanvas = () => {
   return (
-    <div className='w-full h-auto absolute inset-0 z-[-1] bg-black'>
+    <div className='w-full h-auto absolute inset-0 z-[-1] bg-gradient-to-r from-black to-slate-950'>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Stars />
