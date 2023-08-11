@@ -16,7 +16,7 @@ const Home = () => {
         </div>
         <div className='w-full md:w-1/4 flex md:flex-row text-center items-center justify-center text-8xl mt-4 md:mt-0'>
           <div className='text-6xl'>
-            I am <h1 className='text-8xl'>Arbaz Khan</h1>
+            I am <h1 className='text-8xl font-highlight bg-gradient-to-l from-amber-100 via-pink-200 to-purple-600 text-transparent bg-clip-text'>ARBAZ KHAN</h1>
           </div>
         </div>
       </div>
