@@ -22,10 +22,10 @@ const DomainCard = ({ index, title, icon }) => {
                 animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }}
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut"}}
-                className='w-full bg-gradient-to-l from-amber-100 via-pink-200 to-purple-600 p-[1px] rounded-[20px] shadow-car' style={{ zIndex: 1 }}>
+                className='w-full bg-gradient-to-l from-amber-100 via-pink-200 to-purple-600 p-[1px] rounded-[20px]' style={{ zIndex: 1 }}>
 
-                <div options={{ max: 45, scale: 1, speed: 450 }} className=' min-h-[250px] rounded-[20px] px-12 py-9 bg-gradient-to-b from-gray-900 to-gray-800 justify-center text-center items-center flex-col'>
-                    <div className='flex flex-col items-center justify-center h-full'>
+                <div options={{ max: 45, scale: 1, speed: 450 }} className=' min-h-[250px] rounded-[20px] px-12 py-9 bg-gradient-to-b from-gray-900 to-gray-800 justify-center text-center items-center flex-col '>
+                    <div className='flex flex-col items-center justify-center h-full '>
                         <img src={icon} alt={title} className='w-auto h-16 object-contain items-center justify-center' />
                         <h1 className='mt-5 font-highlight text-md font-bold'>{title}</h1>
                     </div>
@@ -69,14 +69,14 @@ const About = () => {
                         exit={{ opacity: 0, y: -50 }}
                         transition={{ type: "spring", duration: 1}}
                         style={{ zIndex: 1 }}>
-                <div className=' text-left w-auto text-xl m-28 mt-14 leading-8 text-gray-300'>
+                <div className=' text-left w-auto text-xl m-28 mt-14 leading-8 text-gray-200'>
                     <p>Hey, and welcome to my corner of the digital world!</p><br/>
                     <p>Ever since my childhood, I've been captivated by science and its endless possibilities. From crafting circuits to bringing Arduino Bluetooth cars and finger-tracking mice to life, my curiosity led me to GIK Institute, where I'm currently exploring the vast universe of knowledge. Coding is my heartbeat – from web development to diving deep into AI, RL, DL, and computer vision – I thrive on the blend of creativity and logic. But my interests don't stop at the virtual realm. With a strong grasp of system programming and hardware, I've ventured into the tangible world, merging the digital with the physical.</p><br/>
                     <p>Beyond lines of code, data analysis and visualization hold a special place in my skill set. I find joy in unraveling insights from data and presenting them with tools like Data Studio, Tableau, and Excel. The essence of my journey lies in crafting projects that fuse technology with creativity, from brain-computer interfaces to turning components into functional wonders. Innovation, for me, is about nurturing ideas into reality, and that's where my passion truly thrives. Thanks for joining me on this adventure where every line of code, every circuit, and every insight is a step forward in our digital narrative.</p><br/>
                 </div>
             </motion.div>
             
-            <div className='flex flex-wrap gap-10 mt-20 text-center justify-center items-center'>
+            <div className='flex flex-wrap gap-10 mt-20 text-center justify-center items-center '>
                 {domain.map((domain, index) => (<DomainCard key={domain.title} index = {index} {...domain}/>))}
             </div>
 
