@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import StarsCanvas from "./components/canvas/Stars"
 import About from "./components/About"
 import Experience from "./components/Experience";
+import Technologies from "./components/Technologies";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       </section>
       <About/>
       <Experience/>
+      <Technologies/>
       
     </div>
   );
