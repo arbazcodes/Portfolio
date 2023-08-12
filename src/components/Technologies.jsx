@@ -1,71 +1,138 @@
-import React from 'react'
+import React, { Suspense }from 'react'
+import { Canvas } from '@react-three/fiber'
+import py from "../assets/py.png"
+import jp from "../assets/jp.png"
+import tf from "../assets/tf.png"
+import kr from "../assets/kr.png"
+import np from "../assets/np.png"
+import cv from "../assets/cv.png"
+import html from "../assets/html.png"
+import css from "../assets/css.png"
+import js from "../assets/js.png"
+import rt from "../assets/rt.png"
+import tw from "../assets/tw.png"
+import tjs from "../assets/tjs.png"
+import c from "../assets//c.png"
+import cpp from "../assets/cpp.png"
+import sql from "../assets//sql.png"
+import {
+  Decal,
+  Float,
+  OrbitControls,
+  Preload,
+  useTexture,
+} from "@react-three/drei";
+import { Vector3 } from 'three';
 
-const className="last:"  = () => {
+const Ball = ({icon}) => {
+    const texture = useTexture(icon);
+    return(
+      <Float speed={1.75} rotationIntensity={5} floatIntensity={2}>
+        <mesh castShadow receiveShadow>
+        <sphereGeometry args={[2.5, 32, 32]} />
+        <meshStandardMaterial
+          color='#fff8eb'
+          flatShading
+        />
+        <Decal
+          position={[0, 0, 1]}
+          rotation={[2 * Math.PI, 0, 6.25]}
+          scale={3}
+          map={texture}
+          flatShading
+        />
+        </mesh>
+      </Float>
+    )
+
+}
+
+
+
+const BallCanvas = ({icon}) => {
+  return (
+    <Canvas>
+      <ambientLight intensity={2.5}/>
+        <OrbitControls enableZoom={false}/>
+        <Ball icon={icon}/>
+
+    </Canvas>
+  )
+}
+
+
+const Technologies  = () => {
   const technologies = [
     {
-      name: "HTML 5",
+      name: "Python",
+      icon: py,
+    },
+    {
+      name: "Jupyter",
+      icon: jp,
+    },
+    {
+      name: "TensorFlow",
+      icon: tf,
+    },
+    {
+      name: "Keras",
+      icon: kr,
+    },
+    {
+      name: "Numpy",
+      icon: np,
+    },
+    {
+      name: "OpenCV",
+      icon: cv,
+    },
+    {
+      name: "Html",
       icon: html,
     },
     {
-      name: "CSS 3",
+      name: "CSS",
       icon: css,
     },
     {
       name: "JavaScript",
-      icon: javascript,
+      icon: js,
     },
     {
-      name: "TypeScript",
-      icon: typescript,
+      name: "React",
+      icon: rt,
     },
     {
-      name: "React JS",
-      icon: reactjs,
+      name: "Tailwind",
+      icon: tw,
     },
     {
-      name: "Redux Toolkit",
-      icon: redux,
+      name: "ThreeJS",
+      icon: tjs,
     },
     {
-      name: "Tailwind CSS",
-      icon: tailwind,
+      name: "C",
+      icon: c,
     },
     {
-      name: "Node JS",
-      icon: nodejs,
+      name: "CPP",
+      icon: cpp,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
+      name: "MySQL",
+      icon: sql,
     },
-    {
-      name: "Three JS",
-      icon: threejs,
-    },
-    {
-      name: "git",
-      icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
-    },
-  ];
+  ]
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-10">
+    <div className="flex flex-row flex-wrap gap-10 bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center">
       {technologies.map((technology) => (
         <div className='w-28 h-28' key={technology.name}>
-          <Canvas>
-            
-          </Canvas>
+            <BallCanvas icon={technology.icon}/>
         </div>
       ))}
     </div>
   )
 }
 
-export default className="last:" 
+export default Technologies
