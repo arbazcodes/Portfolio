@@ -4,6 +4,8 @@ import StarsCanvas from "./components/canvas/Stars"
 import About from "./components/About"
 import Experience from "./components/Experience";
 import Technologies from "./components/Technologies";
+import ModelViewer from "./components/Model";
+import ComputersCanvas from "./components/Model";
 
 
 function App() {
@@ -17,7 +19,6 @@ function App() {
       <About/>
       <Experience/>
       <Technologies/>
-      
     </div>
   );
 }

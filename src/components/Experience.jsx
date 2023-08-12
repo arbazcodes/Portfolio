@@ -118,7 +118,7 @@ const Experience = () => {
   
     return (
       <>
-        <div className='h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 justify-center items-center'>
+        <div className='wave h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 justify-center items-center'>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,6 +140,7 @@ const Experience = () => {
             </VerticalTimeline>
           </div>
         </div>
+        
       </>
     );
   }
