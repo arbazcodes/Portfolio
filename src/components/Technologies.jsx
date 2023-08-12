@@ -21,6 +21,7 @@ import {
   OrbitControls,
   useTexture,
 } from "@react-three/drei";
+import Model from "./Model"
 
 const Ball = ({icon}) => {
     const texture = useTexture(icon);
@@ -122,13 +123,19 @@ const Technologies  = () => {
   ]
   return (
     <>
-    <div className="bg-gradient-to-r from-black to-slate-950 py-28 flex flex-row flex-wrap gap-10 text-center justify-center items-center">
-        {technologies.map((technology) => (
-          <div className='w-28 h-28' key={technology.name}>
-              <BallCanvas icon={technology.icon}/>
+        <div className="bg-gradient-to-r from-black to-slate-950 py-28 flex flex-col md:flex-row">
+          <div className='w-1/2 flex flex-row flex-wrap gap-10 text-center justify-center items-center'>
+              {technologies.map((technology) => (
+                <div className='w-28 h-28' key={technology.name}>
+                    <BallCanvas icon={technology.icon}/>
+                </div>
+              ))}
           </div>
-        ))}
-      </div>
+          <div className='w-1/2 flex flex-row flex-wrap gap-10 text-center justify-center items-center'>
+                <Model/>
+          </div>
+
+        </div>
       </>
   )
 }
