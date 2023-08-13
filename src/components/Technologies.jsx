@@ -1,4 +1,4 @@
-import React, { useEffect, useRef }from 'react'
+import React, { Suspense, useEffect, useRef }from 'react'
 import { Canvas } from '@react-three/fiber'
 import py from "../assets/py.png"
 import jp from "../assets/jp.png"
@@ -21,7 +21,7 @@ import {
   OrbitControls,
   useTexture,
 } from "@react-three/drei";
-import Model from "./Model"
+import CanvasLoader from './Loader'
 
 const Ball = ({icon}) => {
     const texture = useTexture(icon);
@@ -49,11 +49,12 @@ const Ball = ({icon}) => {
 const BallCanvas = ({icon}) => {
   return (
     <Canvas>
+    <Suspense fallback={CanvasLoader}>
       <ambientLight intensity={1}/>
       <directionalLight position={[0, 0, 0.05]} />
         <OrbitControls enableZoom={false}/>
         <Ball icon={icon}/>
-
+    </Suspense>
     </Canvas>
   )
 }
@@ -123,18 +124,14 @@ const Technologies  = () => {
   ]
   return (
     <>
-        <div className="bg-gradient-to-r from-black to-slate-950 py-28 flex flex-col md:flex-row">
-          <div className='w-1/2 flex flex-row flex-wrap gap-10 text-center justify-center items-center'>
+        <div className="bg-gradient-to-r from-black to-slate-950 py-28 flex flex-col md:flex-row text-center justify-center items-center w-full h-full">
+          <div className='flex flex-row flex-wrap gap-10 text-center justify-center items-center w-full h-full ml-32 mr-32'>
               {technologies.map((technology) => (
-                <div className='w-28 h-28' key={technology.name}>
+                <div className='w-32 h-32' key={technology.name}>
                     <BallCanvas icon={technology.icon}/>
                 </div>
               ))}
           </div>
-          <div className='w-1/2 flex flex-row flex-wrap gap-10 text-center justify-center items-center'>
-                <Model/>
-          </div>
-
         </div>
       </>
   )

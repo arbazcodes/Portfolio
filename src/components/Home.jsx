@@ -2,6 +2,7 @@ import React from 'react';
 import { HiDownload } from 'react-icons/hi';
 import avatar from "../assets/arbaz-a0.png";
 
+
 const Home = () => {
   return (
     <div name="home" className="h-screen w-full bg-transparent text-white">
