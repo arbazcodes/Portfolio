@@ -21,13 +21,13 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
                     animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -100 }}
                     exit={{ opacity: 0, y: 100 }}
                     transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut" }}
-                    className="w-full rounded-[20px] h-[800px]" style={{ zIndex: 1 }}>
+                    className="w-full rounded-[20px]" style={{ zIndex: 1 }}>
 
-                    <div options={{ max: 45, scale: 1, speed: 450 }} className=" min-h-[300px] rounded-[20px] p-5 bg-gradient-to-b from-slate-950 to-slate-800 justify-center text-center items-center flex-col w-full">
+                    <div options={{ max: 45, scale: 1, speed: 450 }} className=" min-h-[300px] rounded-[20px] p-5 bg-gradient-to-b from-slate-950 to-slate-900 justify-center text-center items-center flex-col w-full">
                         <div className="flex flex-col items-center justify-center h-[300px] w-full relative">
                             <img src={image} alt={name} className="w-full h-[300px] object-cover rounded-2xl" />
                             <div className="absolute inset-0 flex justify-end m-4">
-                                <div onClick={() => window.open(source_code_link, "_blank")} className="flex w-10 h-10 rounded-full cursor-pointer items-center justify-center">
+                                <div onClick={() => window.open(source_code_link, "_blank")} className="flex w-10 h-10 rounded-full cursor-pointer items-center justify-center bg-black">
                                     <img src={git} alt="GitHub" className="w-6 h-6" />
                                 </div>
                             </div>
@@ -139,8 +139,8 @@ const Projects = () => {
                         exit={{ opacity: 0, y: -50 }}
                         transition={{ type: "spring", duration: 1}}
                         style={{ zIndex: 1 }}>
-                <div className=' text-center w-auto text-xl m-28 mt-14 leading-8 text-gray-200'>
-                    <p>Here is sonme work I have done</p><br/>
+                <div className=' text-center w-auto text-xl mt-14 leading-8 text-gray-200'>
+                    <p>Here are some recent projects I have done.</p><br/>
                 </div>
             </motion.div>
             <div className='flex flex-wrap gap-10 mt-20 items-center justify-center'>
