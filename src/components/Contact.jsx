@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import EarthCanvas from "./Earth"
 
 const Contact = () => {
     const [form, setForm] = useState({
@@ -8,6 +9,7 @@ const Contact = () => {
         email: '',
         message: '',
     });
+    const [loading, setLoading] = useState();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -18,12 +20,42 @@ const Contact = () => {
     };
 
     const handleSubmit = (e) => {
+
+        if (!form.name || !form.email || !form.message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
         e.preventDefault();
-        // Logic for handling form submission (email sending, etc.)
+        setLoading(true);
+
+        emailjs.send("service_wzdjit8", 
+            "template_uliw0nd", 
+            {
+                from_name: form.name,  
+                to_name: "Arbaz Khan", 
+                from_email: form.email, 
+                to_email: "8566206@gmail.com", 
+                message: form.message
+            }, 
+            "6-NCqRxX_Ncm8Pd2-"
+        ).then(() => {
+            setLoading(false);
+            alert("Thank You. I will get back to you as soon as possible. ");
+            setForm({
+                name:'',
+                email:'',
+                message:'',
+            });
+        }).catch((error) => {
+            setLoading(false);
+            console.log(error);
+            alert("Oops, Something went wrong.");
+        });
     };
 
     return (
-        <div className='flex bg-gradient-to-r from-black to-slate-950 h-full w-full text-white justify-center items-center p-12'>
+        <div className='bg-gradient-to-r from-black to-slate-950 h-full w-full text-white justify-center items-center p-12' style={{zIndex:1}}>
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}

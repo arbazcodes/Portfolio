@@ -51,6 +51,15 @@ const NavBar = () => {
         };
     }, []);
 
+    const toggleNav = () => {
+        setNav(!nav);
+        if (!nav) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    };
+
   return (
     <div className={`flex justify-between w-full h-24 items-center text-white fixed px-5 transition-all duration-300 ${isScrolled ? ' bg-slate-950 bg-opacity-95' : 'bg-transparent'}`} style={{ zIndex: 2 }}>
         <img src={logo} alt='logo' className=' h-14 w-15 hover:scale-110 duration-200'/>
@@ -58,12 +67,12 @@ const NavBar = () => {
             {links.map(({id, link})=>(<li key={id} className='capitalize  px-7 font-medium text-xl cursor-pointer text-gray-500 hover:scale-125 hover:text-white duration-200'>
             {link}</li>))}
         </ul>
-        <div onClick = {() => setNav(!nav)} className='md:hidden cursor-pointer pr-5 text-gray-500 hover:text-white hover:scale-110 duration-200 z-10'>
+        <div onClick = {toggleNav} className='md:hidden cursor-pointer pr-5 text-gray-500 hover:text-white hover:scale-110 duration-200 z-10'>
             {nav ? <FaTimes size={30}/> : <FaBars size={30}/>}
         </div>
         {nav && (
             
-            <ul className='md:hidden flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-r from-black to-slate-950'>
+            <ul className='md:hidden flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-r from-black to-slate-950 '>
                 {links.map(({id, link})=>(
                     <motion.div 
                         initial={{ opacity: 0, y: 50 }}

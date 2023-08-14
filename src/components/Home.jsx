@@ -2,11 +2,23 @@ import React from 'react';
 import { HiDownload } from 'react-icons/hi';
 import avatar from "../assets/arbaz-a0.png";
 
+const BackgroundVideo = () => {
+  return (
+    <video autoPlay loop muted className="background-video">
+      <source src={"/bg3.mp4"} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+};
 
 const Home = () => {
   return (
-    <div name="home" className="h-screen w-full bg-transparent text-white">
-      <div className='w-full mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'>
+    <div name="home" className="relative h-screen w-full bg-transparent text-white">
+      {/* Background Video */}
+      <BackgroundVideo />
+
+      {/* Content Overlay */}
+      <div className='w-full mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row relative'>
         <div className='w-full md:w-1/4 sm:flex sm:flex-row text-center items-center justify-center text-8xl mb-4 md:mb-0'>
           <div className="flex flex-col items-center">
             Hello There

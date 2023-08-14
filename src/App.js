@@ -13,7 +13,7 @@ function App() {
       <NavBar/>
       <div className='relative z-0'>
           <Home />
-          <StarsCanvas />
+          
       </div>
       <About/>
       <Experience/>
