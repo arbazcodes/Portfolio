@@ -16,6 +16,7 @@ import tjs from "../assets/tjs.png"
 import c from "../assets//c.png"
 import cpp from "../assets/cpp.png"
 import sql from "../assets//sql.png"
+import mat from "../assets/map.jpg"
 import {
   Decal,
   Float,
@@ -26,13 +27,14 @@ import ModelCanvas from "./Model"
 
 const Ball = ({icon}) => {
     const texture = useTexture(icon);
+    const material = useTexture(mat);
     return(
-      <Float speed={1.75} rotationIntensity={5} floatIntensity={2}>
+      <Float speed={1.5} rotationIntensity={5} floatIntensity={2}>
         <mesh castShadow receiveShadow>
         <sphereGeometry args={[2.5, 32, 32]} />
-        <meshStandardMaterial
-          color='#fff8eb'
+        <meshLambertMaterial
           flatShading
+          map={material}
         />
         <Decal
           position={[0, 0, 1]}
@@ -51,7 +53,7 @@ const BallCanvas = ({icon}) => {
   return (
     <Canvas>
     <Suspense fallback={CanvasLoader}>
-      <ambientLight intensity={1.5}/>
+      <ambientLight intensity={2}/>
       <directionalLight position={[0, 0, 0.05]} />
         <OrbitControls enableZoom={false}/>
         <Ball icon={icon}/>
