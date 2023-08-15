@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {FaBars, FaTimes} from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import {motion} from "framer-motion"
+import { Link } from 'react-scroll';
 
 const NavBar = () => {
 
@@ -65,7 +66,9 @@ const NavBar = () => {
         <img src={logo} alt='logo' className=' h-14 w-15 hover:scale-110 duration-200'/>
         <ul className='hidden md:flex'>
             {links.map(({id, link})=>(<li key={id} className='capitalize  px-7 font-medium text-xl cursor-pointer text-gray-500 hover:scale-125 hover:text-white duration-200'>
-            {link}</li>))}
+            <Link to={link} smooth duration={800}>
+                {link}
+            </Link></li>))}
         </ul>
         <div onClick = {toggleNav} className='md:hidden cursor-pointer pr-5 text-gray-500 hover:text-white hover:scale-110 duration-200 z-10'>
             {nav ? <FaTimes size={30}/> : <FaBars size={30}/>}
@@ -81,7 +84,9 @@ const NavBar = () => {
                         transition={{ type:"tween", duration: 0.5, delay: 0.05 * id}}
                         style={{ zIndex: 1 }}>
                         <li key={id} className='capitalize px-4 py-6 text-4xl cursor-pointer text-gray-500 hover:scale-125 hover:text-white duration-200'> 
+                        <Link to={link} smooth duration={800} onClick={toggleNav}>
                         {link}
+                         </Link>
                         </li>
                     </motion.div>))}
             </ul>

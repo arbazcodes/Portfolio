@@ -14,7 +14,7 @@ const DomainCard = ({ index, title, icon }) => {
     threshold: 0.5,
 });
     return (
-        <Tilt className="xs:w-[250px] w-64 items-center">
+        <Tilt className="xs:w-[250px] w-80 items-center">
         <AnimatePresence>
             <motion.div
                 ref={ref}
@@ -22,12 +22,12 @@ const DomainCard = ({ index, title, icon }) => {
                 animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }}
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut"}}
-                className='w-full bg-gradient-to-l from-amber-100 via-pink-200 to-purple-600 p-[1px] rounded-[20px]' style={{ zIndex: 1 }}>
+                className='w-full bg-gradient-to-tr from-blue-300 via-cyan-600 to-zinc-200 p-[4px] rounded-[10px]' style={{ zIndex: 1 }}>
 
-                <div options={{ max: 45, scale: 1, speed: 450 }} className=' min-h-[250px] rounded-[20px] px-12 py-9 bg-gradient-to-b from-gray-900 to-gray-800 justify-center text-center items-center flex-col '>
+                <div options={{ max: 45, scale: 1, speed: 450 }} className=' min-h-[300px] rounded-[10px] px-12 py-20 card-bg flex-col'>
                     <div className='flex flex-col items-center justify-center h-full '>
-                        <img src={icon} alt={title} className='w-auto h-16 object-contain items-center justify-center' />
-                        <h1 className='mt-5 font-highlight text-md font-bold'>{title}</h1>
+                        <img src={icon} alt={title} className='w-auto  h-20 object-contain items-center justify-center' />
+                        <h1 className='mt-5 text-xl font-bold'>{title}</h1>
                     </div>
                 </div>
             </motion.div>
@@ -40,21 +40,21 @@ const About = () => {
    
     const domain = [
         {
-            title: "AI Enigineer",
+            title: "AI ENGINEER",
             icon: ai
         },
         {
-            title: "Data Analyst",
+            title: "DATA ANALYST",
             icon: data
         },
         {
-            title: "Web Developer",
+            title: "WEB DEVELOPER",
             icon: web
         }
     ]
     return (
         <>
-        <div className='h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center'>
+        <div name="about" className='h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center'>
         <motion.div initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}

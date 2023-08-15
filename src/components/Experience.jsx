@@ -11,23 +11,26 @@ const ExperienceCard = ({ experience }) => {
     return (
       <VerticalTimelineElement
         contentStyle={{
-          background: "#1d1836",
-          color: "#fff",
+          background: `url('/bg.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          border: '2px solid white', 
+          color: '#fff',
         }}
-        contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+        contentArrowStyle={{ borderRight: "7px solid  white" }}
         date={experience.date}
         iconStyle={{ background: experience.iconBg }}
         icon={
-          <div className='flex justify-center items-center w-full h-full'>
+          <div className='flex justify-center items-center w-full h-full '>
             <img
               src={experience.icon}
               alt={experience.company_name}
-              className='w-[80%] h-[80%] object-contain'
-        />
+              className='w-[80%] h-[80%] object-contain'/>
           </div>
         }
+        className=''
       >
-        <div>
+        <div className='pt-5 '>
           <h3 className='text-white text-[24px] font-bold text-center'>{experience.title}</h3>
           <p
             className='s text-[16px] font-semibold text-center'
@@ -118,7 +121,7 @@ const Experience = () => {
   
     return (
       <>
-        <div className='wave h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 justify-center items-center'>
+        <div name="experience" className='wave h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 justify-center items-center'>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

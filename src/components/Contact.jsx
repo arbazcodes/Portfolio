@@ -54,7 +54,7 @@ const Contact = () => {
     };
 
     return (
-        <div className='flex bg-gradient-to-r from-black to-slate-950 h-full w-full text-white justify-center items-center p-12' style={{zIndex:1}}>
+        <div name= "contact" className='flex bg-gradient-to-r from-black to-slate-950 h-full w-full text-white justify-center items-center p-12' style={{zIndex:1}}>
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
