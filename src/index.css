@@ -46,12 +46,6 @@
   z-index: 0;
 }
 
-.bg-image {
-  background-image: url('../public/herobg.jpg');
-  background-size: cover; 
-  background-position: center center; 
-}
-
 .no-scroll {
   overflow: hidden;
 }

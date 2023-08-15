@@ -1,6 +1,5 @@
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import StarsCanvas from "./components/Stars"
 import About from "./components/About"
 import Experience from "./components/Experience";
 import Technologies from "./components/Technologies"

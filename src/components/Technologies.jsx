@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect, useRef }from 'react'
 import { Canvas } from '@react-three/fiber'
+import CanvasLoader from './Loader'
 import py from "../assets/py.png"
 import jp from "../assets/jp.png"
 import tf from "../assets/tf.png"
@@ -21,7 +22,7 @@ import {
   OrbitControls,
   useTexture,
 } from "@react-three/drei";
-import CanvasLoader from './Loader'
+import ModelCanvas from "./Model"
 
 const Ball = ({icon}) => {
     const texture = useTexture(icon);
@@ -50,7 +51,7 @@ const BallCanvas = ({icon}) => {
   return (
     <Canvas>
     <Suspense fallback={CanvasLoader}>
-      <ambientLight intensity={1}/>
+      <ambientLight intensity={1.5}/>
       <directionalLight position={[0, 0, 0.05]} />
         <OrbitControls enableZoom={false}/>
         <Ball icon={icon}/>
@@ -124,13 +125,16 @@ const Technologies  = () => {
   ]
   return (
     <>
-        <div className="bg-gradient-to-r from-black to-slate-950 py-28 flex flex-col md:flex-row text-center justify-center items-center w-full h-full">
-          <div className='flex flex-row flex-wrap gap-10 text-center justify-center items-center w-full h-full ml-32 mr-32'>
+        <div className="flex md:flex-row flex-col bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center w-full h-full">
+          <div className='md:w-1/2 flex flex-row flex-wrap gap-10 text-center justify-center items-center w-full h-full md:ml-16 md:mr-16'>
               {technologies.map((technology) => (
                 <div className='w-32 h-32' key={technology.name}>
                     <BallCanvas icon={technology.icon}/>
                 </div>
               ))}
+          </div>
+          <div className='md:w-1/2 h-full w-full'>
+                <ModelCanvas/>
           </div>
         </div>
       </>
