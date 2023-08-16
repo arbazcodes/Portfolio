@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { delay, motion } from 'framer-motion';
+import {motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import gh from "../assets/gh.png";
 import linkd from "../assets/linkd.png";
@@ -14,7 +14,7 @@ const Contact = () => {
         email: '',
         message: '',
     });
-    const [loading, setLoading] = useState();
+    const [, setLoading] = useState();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
