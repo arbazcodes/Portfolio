@@ -13,6 +13,11 @@
     font-family: 'Poppins', sans-serif;
   }
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .button {
   display: inline-block;
   padding: 10px 20px;

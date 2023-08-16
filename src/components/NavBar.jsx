@@ -62,8 +62,8 @@ const NavBar = () => {
     };
 
   return (
-    <div className={`flex justify-between w-full h-24 items-center text-white fixed px-5 transition-all duration-300 ${isScrolled ? ' bg-slate-950 bg-opacity-95' : 'bg-transparent'}`} style={{ zIndex: 2 }}>
-        <img src={logo} alt='logo' className=' h-14 w-15 hover:scale-110 duration-200'/>
+    <div className={`flex justify-between w-full h-24 items-center text-white fixed px-5 transition-all duration-300 ${isScrolled ? ' bg-slate-950 bg-opacity-95' : 'bg-transparent'}`} style={{ zIndex: 3 }}>
+        <img src={logo} alt='logo' className=' h-14 w-15 hover:scale-110 duration-200' onClick={()=>{window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", "_blank")}}/>
         <ul className='hidden md:flex'>
             {links.map(({id, link})=>(<li key={id} className='capitalize  px-7 font-medium text-xl cursor-pointer text-gray-200 hover:scale-125 hover:text-cyan-600 hover:font-bold duration-200'>
             <Link to={link} smooth duration={800}>
@@ -81,8 +81,7 @@ const NavBar = () => {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -50 }}
-                        transition={{ type:"tween", duration: 0.5, delay: 0.05 * id}}
-                        style={{ zIndex: 1 }}>
+                        transition={{ type:"tween", duration: 0.5, delay: 0.05 * id}}>
                         <li key={id} className='capitalize px-4 py-6 text-4xl cursor-pointer text-gray-500 hover:scale-125 hover:text-white duration-200'> 
                         <Link to={link} smooth duration={800} onClick={toggleNav}>
                         {link}

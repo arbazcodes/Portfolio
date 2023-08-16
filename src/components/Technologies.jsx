@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef }from 'react'
+import React, { Suspense}from 'react'
 import { Canvas } from '@react-three/fiber'
 import CanvasLoader from './Loader'
 import py from "../assets/py.png"
@@ -127,8 +127,8 @@ const Technologies  = () => {
   ]
   return (
     <>
-        <div className="flex md:flex-row flex-col bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center w-full h-full">
-          <div className='md:w-1/2 flex flex-row flex-wrap gap-10 text-center justify-center items-center w-full h-full md:ml-16 md:mr-16'>
+        <div className="flex md:flex-row flex-col bg-gradient-to-r from-black to-slate-950  text-center justify-center items-center w-full h-full">
+          <div className='md:w-1/2 flex flex-row flex-wrap gap-10 text-center justify-center items-center w-full h-full md:ml-16 md:mr-16 p-10 md:p-0'>
               {technologies.map((technology) => (
                 <div className='w-32 h-32' key={technology.name}>
                     <BallCanvas icon={technology.icon}/>

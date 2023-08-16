@@ -1,5 +1,4 @@
 import React from 'react';
-import { HiDownload } from 'react-icons/hi';
 import avatar from "../assets/arbaz-a0.png";
 
 const BackgroundVideo = () => {

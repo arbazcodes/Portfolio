@@ -17,10 +17,10 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             <AnimatePresence>
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, y: -100 }}
-                    animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -100 }}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 100 }}
                     exit={{ opacity: 0, y: 100 }}
-                    transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut" }}
+                    transition={{ type: "spring", duration: 0.5, delay: index * 0.5, ease: "easeOut" }}
                     className="w-full rounded-[20px]" style={{ zIndex: 1 }}>
 
                     <div options={{ max: 45, scale: 1, speed: 450 }} className=" min-h-[300px] rounded-[20px] p-5 bg-gradient-to-b from-slate-950 to-slate-900 justify-center text-center items-center flex-col w-full">
