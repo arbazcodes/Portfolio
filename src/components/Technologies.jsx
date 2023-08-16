@@ -41,8 +41,7 @@ const Ball = ({icon}) => {
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={3}
           map={texture}
-          flatShading
-        />
+          flatShading/>
         </mesh>
       </Float>
     )

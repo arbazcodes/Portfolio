@@ -13,30 +13,31 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
         threshold: 0.5,
     });
     return (
-        <Tilt className="xs:w-[250px] w-[400px] items-center">
+        <Tilt className="xs:w-[250px] w-[450px] items-center">
             <AnimatePresence>
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 100 }}
+                    initial={{ opacity: 0, y: -100 }}
+                    animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -100 }}
                     exit={{ opacity: 0, y: 100 }}
-                    transition={{ type: "spring", duration: 0.5, delay: index * 0.5, ease: "easeOut" }}
-                    className="w-full rounded-[20px]" style={{ zIndex: 1 }}>
+                    transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut" }}
+                    className="w-full rounded-[15px]" style={{ zIndex: 1 }}>
 
-                    <div options={{ max: 45, scale: 1, speed: 450 }} className=" min-h-[300px] rounded-[20px] p-5 bg-gradient-to-b from-slate-950 to-slate-900 justify-center text-center items-center flex-col w-full">
+                    <div options={{ max: 45, scale: 1, speed: 450 }} className=" min-h-[300px] rounded-[15px] card-bg justify-center text-center items-center flex-col w-full">
                         <div className="flex flex-col items-center justify-center h-[300px] w-full relative">
-                            <img src={image} alt={name} className="w-full h-[300px] object-cover rounded-2xl" />
+                            <img src={image} alt={name} className="w-full h-[300px] object-cover rounded-t-[15px]" />
                             <div className="absolute inset-0 flex justify-end m-4">
                                 <div onClick={() => window.open(source_code_link, "_blank")} className="flex w-10 h-10 rounded-full cursor-pointer items-center justify-center bg-black">
                                     <img src={git} alt="GitHub" className="w-6 h-6" />
                                 </div>
                             </div>
                         </div>
-                        <div className="mt-5 text-left h-[200px]"> {/* Set a fixed height */}
+                        <div></div>
+                        <div className="mt-5 text-left h-[200px] p-5 leading-relaxed"> {/* Set a fixed height */}
                             <h3 className="text-white font-bold text-[24px]">{name}</h3>
                             <p className="mt-2 text-md text-[14px]">{description}</p>
                         </div>
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-2  p-5">
                             {tags.map((tag) => (
                                 <p
                                     key={`${name}-${tag.name}`}

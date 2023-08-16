@@ -60,7 +60,7 @@ const Contact = () => {
     };
 
     return (
-        <div name= "contact" className='bg-gradient-to-r from-black to-slate-950 h-full w-full text-white p-12' style={{zIndex:1}}>
+        <div name= "contact" className=' pt-52 bg-gradient-to-r from-black to-slate-950 h-full w-full text-white p-12' style={{zIndex:1}}>
         <div className='w-full md:flex-row flex flex-col border-2 border-white'>
         <div className='justify-center items-center flex md:w-1/2'>
             <motion.div
