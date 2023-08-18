@@ -22,7 +22,7 @@ const DomainCard = ({ index, title, icon }) => {
                 animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }}
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut"}}
-                className='w-full bg-gradient-to-tr from-blue-400 via-cyan-700 to-zinc-400 p-[4px]' style={{ zIndex: 1 }}>
+                className='w-full bg-gradient-to-tr from-blue-400 via-cyan-600 to-zinc-200 p-[4px]' style={{ zIndex: 1 }}>
 
                 <div options={{ max: 45, scale: 1, speed: 450 }} className=' min-h-[300px] rounded-[10px] px-12 py-20 card-bg flex-col'>
                     <div className='flex flex-col items-center justify-center h-full '>

@@ -22,7 +22,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
                     exit={{ opacity: 0, y: 100 }}
                     transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut" }}
                     className="w-full rounded-[15px]" style={{ zIndex: 1 }}>
-                  <div className='w-full h-full bg-gradient-to-tr from-blue-400 via-cyan-700 to-zinc-400 p-[4px] rounded-[15px]'>
+                  <div className='w-full h-full bg-gradient-to-tr from-blue-400 via-cyan-600 to-zinc-200 p-[4px] rounded-[15px]'>
                     <div options={{ max: 45, scale: 1, speed: 450 }} className=" min-h-[300px] rounded-[15px] card-bg1 justify-center text-center items-center flex-col w-full">
                         <div className="flex flex-col items-center justify-center h-[300px] w-full relative">
                             <img src={image} alt={name} className="w-full h-[300px] object-cover rounded-t-[15px]" />
