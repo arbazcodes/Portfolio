@@ -32,6 +32,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className='w-full h-1 bg-gradient-to-tr from-blue-400 via-cyan-700 to-zinc-400'></div>
     </div>
   );
 }

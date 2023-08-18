@@ -11,11 +11,13 @@ const ExperienceCard = ({ experience }) => {
     return (
       <VerticalTimelineElement
         contentStyle={{
-          background: `url('/bg.jpg')`,
+          background: `url('/bg.png')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          
           border: '2px solid white', 
           color: '#fff',
+          height: 500,
+          width: 500
         }}
         contentArrowStyle={{ borderRight: "7px solid  white" }}
         date={experience.date}
@@ -31,7 +33,7 @@ const ExperienceCard = ({ experience }) => {
         className=''
       >
         <div className='pt-5 '>
-          <h3 className='text-white text-[24px] font-bold text-center'>{experience.title}</h3>
+          <h3 className='text-white text-[25px] font-bold text-center'>{experience.title}</h3>
           <p
             className='s text-[16px] font-semibold text-center'
             style={{ margin: 10 }}
@@ -44,7 +46,7 @@ const ExperienceCard = ({ experience }) => {
           {experience.points.map((point, index) => (
             <li
               key={`experience-point-${index}`}
-              className='text-white-100 text-[14px] pl-1 tracking-wider'
+              className='text-white-100 text-[16px] pl-1 tracking-wider'
             >
               {point}
             </li>
