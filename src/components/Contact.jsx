@@ -60,8 +60,9 @@ const Contact = () => {
     };
 
     return (
-        <div name= "contact" className=' pt-52 bg-gradient-to-r from-black to-slate-950 h-full w-full text-white p-12' style={{zIndex:1}}>
-        <div className='w-full md:flex-row flex flex-col border-2 border-white'>
+        <div name= "contact" className='bg-gradient-to-tr from-blue-400 via-cyan-600 to-zinc-200 w-full h-full p-2' style={{zIndex:1}}>
+        <div className='bg-gradient-to-r from-black to-slate-950 h-full w-full text-white p-12'>
+        <div className='w-full md:flex-row flex flex-col'>
         <div className='justify-center items-center flex md:w-1/2'>
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
@@ -127,6 +128,7 @@ const Contact = () => {
                             <img src={em} alt='Gmail' onClick={() => window.open("mailto:8566206@gmail.com", "_blank")} className='w-16 h-16 p-1 bg-white rounded-full hover:scale-110 duration-200 hover:cursor-pointer'/>
                 </motion.div>
 
+            </div>
             </div>
             </div>
         </div>

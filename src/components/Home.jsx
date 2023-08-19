@@ -1,5 +1,7 @@
 import React from 'react';
 import avatar from "../assets/arbaz-a0.png";
+import ModelCanvas from './Model';
+import AvatarCanvas from './AvatarCanvas';
 
 const BackgroundVideo = () => {
   return (
@@ -11,6 +13,7 @@ const BackgroundVideo = () => {
 };
 
 const Home = () => {
+  const path = "/avatar/scene.glb";
   return (
     <div name="home" className="relative h-screen w-full bg-transparent text-white">
       {/* Background Video */}
@@ -24,15 +27,15 @@ const Home = () => {
           </div>
         </div>
         <div className='md:w-2/4 w-full flex justify-center items-center'>
-          <img src={avatar} alt='Avatar' className='h-auto w-64 md:w-full max-w-full'/>
+          <AvatarCanvas/>
         </div>
         <div className='w-full md:w-1/4 flex md:flex-row text-center items-center justify-center text-8xl mt-4 md:mt-0'>
           <div className='text-6xl'>
-            I am <h1 className='text-8xl font-highlight bg-gradient-to-tr from-blue-400 via-cyan-600 to-zinc-200 text-transparent bg-clip-text'>ARBAZ KHAN</h1>
+            I am <h1 className='text-8xl font-highlight bg-gradient-to-tr from-blue-300 via-cyan-600 to-zinc-200 text-transparent bg-clip-text'>ARBAZ KHAN</h1>
           </div>
         </div>
       </div>
-      <div className='w-full h-3 bg-gradient-to-tr from-blue-400 via-cyan-600 to-zinc-200'></div>
+      <div className='w-full h-1 bg-gradient-to-tr from-blue-400 via-cyan-700 to-zinc-400'></div>
     </div>
   );
 }

@@ -126,7 +126,7 @@ const Projects = () => {
           },]
   return (
     <>
-        <div name="projects" className='h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center'>
+        <div name="projects" className='h-full w-full text-white bg-gradient-to-r from-black to-slate-950 py-28 text-center justify-center items-center pb-60'>
             <motion.div initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}

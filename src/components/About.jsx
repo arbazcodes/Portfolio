@@ -18,10 +18,10 @@ const DomainCard = ({ index, title, icon }) => {
         <AnimatePresence>
             <motion.div
                 ref={ref}
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }}
-                exit={{ opacity: 0, x: 100 }}
-                transition={{ type: "spring", duration: 0.75, delay: index * 0.5, ease: "easeOut"}}
+                initial={{ opacity: 0, x: -200 }}
+                animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200 }}
+                exit={{ opacity: 0, x: 200 }}
+                transition={{ type: "spring", duration: 0.75, delay: index * 0.3, ease: "easeOut"}}
                 className='w-full bg-gradient-to-tr from-blue-400 via-cyan-600 to-zinc-200 p-[4px]' style={{ zIndex: 1 }}>
 
                 <div options={{ max: 45, scale: 1, speed: 450 }} className=' min-h-[300px] rounded-[10px] px-12 py-20 card-bg flex-col'>

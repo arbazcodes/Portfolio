@@ -13,10 +13,11 @@ import js from "../assets/js.png"
 import rt from "../assets/rt.png"
 import tw from "../assets/tw.png"
 import tjs from "../assets/tjs.png"
-import c from "../assets//c.png"
+import ub from "../assets//ub.png"
 import cpp from "../assets/cpp.png"
 import sql from "../assets//sql.png"
 import mat from "../assets/map.jpg"
+import sc from "../assets/sc.png"
 import {
   Decal,
   Float,
@@ -29,7 +30,7 @@ const Ball = ({icon}) => {
     const texture = useTexture(icon);
     const material = useTexture(mat);
     return(
-      <Float speed={1.5} rotationIntensity={5} floatIntensity={2}>
+      <Float speed={1.5} rotationIntensity={2} floatIntensity={2}>
         <mesh castShadow receiveShadow>
         <sphereGeometry args={[2.5, 32, 32]} />
         <meshLambertMaterial
@@ -112,10 +113,6 @@ const Technologies  = () => {
       icon: tjs,
     },
     {
-      name: "C",
-      icon: c,
-    },
-    {
       name: "CPP",
       icon: cpp,
     },
@@ -123,7 +120,12 @@ const Technologies  = () => {
       name: "MySQL",
       icon: sql,
     },
+    {
+      name: "Ubuntu",
+      icon: ub,
+    },
   ]
+  const path = "/planet/scene.gltf";
   return (
     <>
         <div className="flex md:flex-row flex-col bg-gradient-to-r from-black to-slate-950  text-center justify-center items-center w-full h-full">
@@ -135,7 +137,7 @@ const Technologies  = () => {
               ))}
           </div>
           <div className='md:w-1/2 h-full w-full'>
-                <ModelCanvas/>
+                
           </div>
         </div>
       </>

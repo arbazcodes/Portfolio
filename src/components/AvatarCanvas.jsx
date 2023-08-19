@@ -1,21 +1,24 @@
-import React, { Suspense, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useAnimations, useGLTF } from "@react-three/drei";
+import React, { useEffect, useRef, Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useGLTF, useAnimations, Preload } from '@react-three/drei';
+import CanvasLoader from './Loader';
 
-import CanvasLoader from "./Loader";
-
-const Model = ({ modelPath }) => {
-  const avatar = useGLTF(modelPath);
-  const {actions, names} = useAnimations(avatar.animations, avatar.scene);
+const Avatar = () => {
+  const avatar = useGLTF('/avatar/avatar.glb');
+  const { actions } = useAnimations(avatar.animations, avatar.scene);
 
   useEffect(() => {
     actions.wave.play();
-  })
+  }, [actions]);
 
-  return (<group><primitive object={avatar.scene} scale={[8,8,8]} rotation-y={0} position-y={-12} /></group>);
+  return (
+    <group>
+      <primitive object={avatar.scene} scale={[8, 8, 8]} rotation-y={0} position-y={-12} />
+    </group>
+  );
 };
 
-const ModelCanvas = ({ modelPath }) => {
+const AvatarCanvas = () => {
   return (
     <Canvas
       shadows
@@ -32,7 +35,7 @@ const ModelCanvas = ({ modelPath }) => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          autoRotate
+          autoRotate={false} // Disable auto rotation
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
@@ -55,12 +58,12 @@ const ModelCanvas = ({ modelPath }) => {
         <pointLight color="green" position={[0, -5, 0]} intensity={1} />
         <pointLight color="white" position={[1, 1, 1]} intensity={1} />
 
-        <Model modelPath={modelPath} />
+        <Avatar/>
 
         <Preload all />
       </Suspense>
     </Canvas>
-  );
-};
+  )
+}
 
-export default ModelCanvas;
+export default AvatarCanvas
