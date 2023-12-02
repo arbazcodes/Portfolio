@@ -17,7 +17,7 @@ import ub from "../assets//ub.png"
 import cpp from "../assets/cpp.png"
 import sql from "../assets//sql.png"
 import mat from "../assets/map.jpg"
-import sc from "../assets/sc.png"
+import AvatarCanvas from "./AvatarCanvas"
 import {
   Decal,
   Float,
@@ -136,8 +136,10 @@ const Technologies  = () => {
                 </div>
               ))}
           </div>
-          <div className='md:w-1/2 h-full w-full'>
-                
+          
+          <div className='md:w-1/2 w-full flex justify-center items-center'>
+          <AvatarCanvas/>
+            
           </div>
         </div>
       </>

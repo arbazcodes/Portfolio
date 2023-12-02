@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, Suspense } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, useAnimations, Preload } from '@react-three/drei';
 import CanvasLoader from './Loader';
@@ -13,7 +13,7 @@ const Avatar = () => {
 
   return (
     <group>
-      <primitive object={avatar.scene} scale={[8, 8, 8]} rotation-y={0} position-y={-12} />
+      <primitive object={avatar.scene} scale={[8, 8, 8]} rotation-y={180} position-y={-12} />
     </group>
   );
 };
@@ -23,7 +23,7 @@ const AvatarCanvas = () => {
     <Canvas
       shadows
       frameloop="demand"
-      dpr={[1, 2]}
+      dpr={[0, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{
         fov: 45,
@@ -31,11 +31,11 @@ const AvatarCanvas = () => {
         far: 200,
         position: [-4, 3, -10],
       }}
-      style={{ height: 800 }}
+      style={{ height: '100vh', margin: '0', padding: '0' }} // Remove margin and padding
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          autoRotate={false} // Disable auto rotation
+          autoRotate={true}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
@@ -58,12 +58,12 @@ const AvatarCanvas = () => {
         <pointLight color="green" position={[0, -5, 0]} intensity={1} />
         <pointLight color="white" position={[1, 1, 1]} intensity={1} />
 
-        <Avatar/>
+        <Avatar />
 
         <Preload all />
       </Suspense>
     </Canvas>
-  )
-}
+  );
+};
 
-export default AvatarCanvas
+export default AvatarCanvas;
