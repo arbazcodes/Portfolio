@@ -17,14 +17,13 @@ import ub from "../assets//ub.png"
 import cpp from "../assets/cpp.png"
 import sql from "../assets//sql.png"
 import mat from "../assets/map.jpg"
-import AvatarCanvas from "./AvatarCanvas"
+import ModelCanvas from "./ModelCanvas"
 import {
   Decal,
   Float,
   OrbitControls,
   useTexture,
 } from "@react-three/drei";
-import ModelCanvas from "./Model"
 
 const Ball = ({icon}) => {
     const texture = useTexture(icon);
@@ -138,7 +137,7 @@ const Technologies  = () => {
           </div>
           
           <div className='md:w-1/2 w-full flex justify-center items-center'>
-          <AvatarCanvas/>
+          <ModelCanvas/>
             
           </div>
         </div>
